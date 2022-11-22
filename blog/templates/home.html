@@ -1,0 +1,11 @@
+<h1>Post</h1>
+
+{% for x in object_list %}
+    <li>
+        Titulo: {{x.title}}<br/>
+        Autor: {{x.author}}<br/>
+        Comentario: {{x.body}}
+    </li>
+
+
+{% endfor %}
