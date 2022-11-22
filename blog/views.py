@@ -10,3 +10,7 @@ from blog.models import *
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
+
+class ArticleDeatailView(DetailView):
+    model = Post
+    template_name = 'article_detail.html'
