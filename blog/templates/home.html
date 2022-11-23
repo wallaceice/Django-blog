@@ -4,12 +4,13 @@
 <h1>Post</h1>
 
 {% for post in object_list %}
-    <li>
-        Titulo: <a href="{% url 'article-detail' post.pk %}"> - {{post.author.first_name }}</a><br/>
-        Autor: {{post.author}}<br/>
-        Comentario: {{post.body}}
-    </li>
-
+    <ul>
+        <li>
+            Titulo: <a href="{% url 'article-detail' post.pk %}" class='link-info'> - {{post.author.first_name}}</a><br/>
+            Autor: {{post.author}}<br/>
+            Comentario: {{post.body}}
+        </li>
+    </ul>
 
 {% endfor %}
 

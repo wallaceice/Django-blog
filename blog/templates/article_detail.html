@@ -1,7 +1,10 @@
 {% extends 'index.html' %}
+{% block title %}
+    {{post.title_tag}}
+{%endblock%}
+
 
 {% block content %}
-
 <h2>{{ post.title}}</h2>
 <small>By: {{post.author.first_name}} {{post.author.name.second_name}} </small>
 <hr>
@@ -9,7 +12,7 @@
 {{post.body}}
 
 <br/><br/>
-<a href=" {% url 'home' %} " class="btn btn-success">Back</a>
+<a href=" {% url 'home' %} " class="btn btn-secondary">Back</a>
 
 
 {% endblock %}
