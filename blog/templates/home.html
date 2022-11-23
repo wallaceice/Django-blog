@@ -1,20 +1,14 @@
-{% extends 'index.html' %}
-
-{% block content %}
+{% extends 'core.html' %} {% block content %}
 <h1>Post</h1>
 
 {% for post in object_list %}
-    <ul>
-        <li>
-            Titulo: <a href="{% url 'article-detail' post.pk %}" class='link-info'> - {{post.author.first_name}}</a><br/>
-            Autor: {{post.author}}<br/>
-            Comentario: {{post.body}}
-        </li>
-    </ul>
+<ul>
+  <li>
+    <a href="{% url 'article_detail' post.pk %}" class="link-info">
+    {{post.author.first_name}}</a><br />
+    {{post.author}}<br />
+    {{post.body}}
+  </li>
+</ul>
 
-{% endfor %}
-
-{% endblock %}
-
-
-
+{% endfor %} {% endblock %}

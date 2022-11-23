@@ -1,0 +1,41 @@
+{% load static %}
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title> {% block title %} GGTE Blog {%endblock%} </title>
+
+    <!-- Custom styles for this template -->
+    <link href= {% static "dist/css/bootstrap.min.css" %} rel="stylesheet">
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href=" {%url 'home'%} ">GGTE Blog</a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href=" {% url 'add_post' %} ">Add Post</a>
+            </li>
+          </ul>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <div class = 'container'>
+        {% block content %}
+
+        {% endblock %}
+      </div>
+
+    <footer class="pt-5 my-5 text-muted border-top">
+      Created by Wallace Silva &middot; &copy; 2022
+    </footer>
+    
+    <script src= {% static "dist/js/bootstrap.bundle.min.js" %}></script>
+  </body>
+</html>
