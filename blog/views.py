@@ -6,6 +6,7 @@ from .forms import *
 # def home(request):
 #    return render(request, 'home.html', {})
 
+
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
@@ -18,7 +19,6 @@ class ArticleDeatailView(DetailView):
 
 class AddPostView(CreateView):
     form_class = PostForm
-    success_url = 'home'
     #fields = ['title', 'title_tag', 'author', 'body']
     template_name = 'add_post.html'
     model = Post
