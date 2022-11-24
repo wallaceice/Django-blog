@@ -8,6 +8,8 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     title_tag = models.CharField(max_length=255, default='Blog Post')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    publish_date = models.DateTimeField(auto_now_add=True)
+    post_date = models.DateField(auto_now_add=True)
     body = models.TextField()
 
     def __str__(self) -> str:

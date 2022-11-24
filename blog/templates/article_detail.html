@@ -5,9 +5,19 @@
 
 {%block content %}
 <h2>{{ post.title}}</h2>
-<small>By: {{post.author.first_name}} {{post.author.name.second_name}} </small>
-<hr />
-<br />
+<small>By: {{post.author.first_name}}
+     {{post.author.name.second_name}} -
+<small>
+    <a href = " {% url 'update_post' post.pk %} " >
+        (edit)
+    </a> - 
+     <a href = " {% url 'delete_post' post.pk %} " >
+        (delete)
+    </a>
+</small>
+</small><br />
+<small><small class = "fw-lighter fst-italic" >{{post.publish_date}}</small></small>
+<br /><br />
 {{post.body}}
 
 <br /><br />

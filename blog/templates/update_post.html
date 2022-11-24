@@ -1,0 +1,15 @@
+{% extends 'core.html' %} {% block content %}
+<h1>Edit Blog Post</h1>
+<br /><br />
+
+<div class="mb-3">
+  <form method="Post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-secondary" type="submit" value="Update"> 
+     <a class =  "btn btn-secondary" href = " {% url 'delete_post' post.pk %} " >Delete</a>
+  </form>
+</div>
+
+{% endblock %}
+

@@ -4,10 +4,12 @@
 {% for post in object_list %}
 <ul>
   <li>
-    <a href="{% url 'article_detail' post.pk %}" class="link-info">
-    {{post.author.first_name}}</a><br />
-    {{post.author}}<br />
-    {{post.body}}
+    <a href="{% url 'article_detail' post.pk %}" class="link-info">{{post.title}}</a>
+     | {{post.author.first_name}} {{post.author.last_name}} -
+      <small><small><small class = " fw-light fst-italic" >{{post.post_date}}</small></small></small>
+
+      <br/>
+    {{post.body}} - <a href = " {% url 'update_post' post.pk %} " ><small>(edit)</small></a>
   </li>
 </ul>
 
