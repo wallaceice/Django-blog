@@ -1,0 +1,42 @@
+/**{
+	background-color:#B0E0E6;
+}*/
+#Vez{
+	margin-top:1%;
+	float:left;
+	color: #e60000;
+	margin-left:33%;
+	height:3%;
+	
+}
+#img_player_atual{
+	margin-top:3.5%;
+	margin-left:1%;
+	width:5%;
+	height:5%;
+}
+#Jogo{
+	width:33%;
+	height:33%;
+	margin-left:33%;
+    border:solid 2px;
+
+}
+.Box_in_line{
+	width: 100px;
+	height: 120px;
+    border:solid 2px;	
+}
+.image{
+	margin:0px;
+	width:100%;
+	height:100%;
+}
+#rodape{
+	color: #e60000;
+	background-color: rgba(166, 166, 166, 0.1);
+	clear:both;
+	margin-top:20%;
+	text-align:center;
+	
+}
