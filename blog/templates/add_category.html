@@ -1,12 +1,12 @@
 {% extends 'core.html' %}
 
 {% block title %}
-    Create a new Blog Post!
+    Create a new Category
 {%endblock%} 
 
 {% block content %}
 
-<h1>Add Blog Post</h1>
+<h1>Add Category</h1>
 <br /><br />
 {%if user.is_authenticated%}
 
@@ -14,12 +14,12 @@
   <form method="Post">
     {% csrf_token %}
     {{ form.as_p}}
-    <input class="btn btn-secondary" type="submit" value="Save">
+    <input class="btn btn-secondary" type="submit" value="Add Category">
   </form>
 </div>
 {% else %}
 
-You Cannot Post in the Blog! <a class =  "btn btn-secondary"
+You dont have permission in this page! <a class =  "btn btn-secondary"
  href = " {% url 'register'%} " >SignUp Now</a>{% endif %}
 
 {% endblock %}

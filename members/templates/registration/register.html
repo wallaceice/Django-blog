@@ -1,4 +1,9 @@
-{% extends 'core.html' %} {% block content %}
+{% extends 'core.html' %}
+
+{% block title %}
+    SignUp
+{%endblock%} 
+{% block content %}
 <h1>Register</h1>
 <br /><br />
 
@@ -6,7 +11,7 @@
   <form method="Post">
     {% csrf_token %}
     {{ form.as_p}}
-    <input class="btn btn-secondary" type="submit" value="Save">
+    <input class="btn btn-secondary" type="submit" value="SignUp">
   </form>
 </div>
 

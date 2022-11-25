@@ -1,16 +1,23 @@
 {% extends 'core.html' %} {% block content %}
-<h1>Post</h1>
+
+
+<h1>Posts</h1>
 
 {% for post in object_list %}
 <ul>
   <li>
-    <a href="{% url 'article_detail' post.pk %}" class="link-info">{{post.title}}</a>
+    <small><small><a href = "{%url 'category' post.category%} " >{{post.category}}</a></small></small> - <a href="{% url 'article_detail' post.pk %}" class="link-info">{{post.title}}</a>
      | {{post.author.first_name}} {{post.author.last_name}} -
       <small><small><small class = " fw-light fst-italic" >{{post.post_date}}</small></small></small>
 
       <br/>
-    {{post.body}} - <a href = " {% url 'update_post' post.pk %} " ><small>(edit)</small></a>
+    {{post.body|slice:300}} - 
+    {% if user.is_authenticated %}
+      {%if user.id == post.author.id%}
+        <a href = " {% url 'update_post' post.pk %} " ><small>(edit)</small></a>
+      {% endif %}
+    {% endif %}
+
   </li>
 </ul>
-
 {% endfor %} {% endblock %}

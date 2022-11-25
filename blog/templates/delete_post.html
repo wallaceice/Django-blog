@@ -1,6 +1,24 @@
-{% extends 'core.html' %} {% block content %}
-<h3>Delete Post: {{ post.title}}</h3>
+{% extends 'core.html' %}
+
+{% block title %}
+    Delete Post
+{%endblock%} 
+
+{% block content %}
+
+<h3>Delete Post: {{ post.title}} 
+<small>
+  <small>
+    <small>
+      <small class = "fw-lighter fst-italic" >{{post.publish_date}}
+
+      </small>
+    </small>
+  </small>
+</small></h3>
 <br/> <br/>
+{%if user.is_authenticated%}
+
 <strong>Are you sure you want to delete this post?</strong>
 <div class="mb-3">
   <form method="Post">
@@ -9,6 +27,8 @@
     <input class="btn btn-secondary" type="submit" value="Delete"></input>
   </form>
 </div>
-
+{% else %}
+You Cannot Delete Posts
+{% endif %}
 {% endblock %}
 

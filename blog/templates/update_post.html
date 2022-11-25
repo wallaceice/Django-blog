@@ -1,7 +1,14 @@
-{% extends 'core.html' %} {% block content %}
-<h1>Edit Blog Post</h1>
+{% extends 'core.html' %}
+
+{% block title %}
+    Edit Blog Post
+{%endblock%} 
+{% block content %}
+
+<h1>Edit Blog Posts</h1>
 <br /><br />
 
+{%if user.is_authenticated%}
 <div class="mb-3">
   <form method="Post">
     {% csrf_token %}
@@ -10,6 +17,8 @@
      <a class =  "btn btn-secondary" href = " {% url 'delete_post' post.pk %} " >Delete</a>
   </form>
 </div>
-
+{% else %}
+You Cannot Edit Posts
+{% endif %}
 {% endblock %}
 
