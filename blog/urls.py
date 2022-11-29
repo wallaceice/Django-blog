@@ -1,5 +1,6 @@
 from django.urls import path
 #from . import views
+from blog import views
 from .views import *
 
 
@@ -12,5 +13,6 @@ urlpatterns = [
     path('article/edit/<int:pk>',UpdatePostView.as_view(), name = 'update_post' ),
     path('article/<int:pk>/remove',DeletePostView.as_view(), name = 'delete_post' ),
     path('category/<str:category_name>', CategoryView, name="category"),
+    path('num_visits/',views.sessfun, name= 'session'),
 
 ]
