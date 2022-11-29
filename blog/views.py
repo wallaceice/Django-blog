@@ -27,6 +27,12 @@ class ArticleDetailView(DetailView):
     model = Post
     template_name = 'article_detail.html'
 
+    def get_context_data(self, *args, **kwargs):
+        category_menu =  Category.objects.all()
+        context =  super(ArticleDetailView,self).get_context_data(*args, **kwargs)
+        context['category_menu'] = category_menu
+        return context
+
 
 class AddPostView(CreateView):
     form_class = PostForm

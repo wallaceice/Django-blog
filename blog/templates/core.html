@@ -20,18 +20,17 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="game">Tic tac toe</a>
-          </li>
-        </ul>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="game">Tic tac toe</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categories
-              </a>
-              {%if category_menu%}
+              </a>            {%if category_menu%}
+
                 <ul class="dropdown-menu">
                   {% for category_item in category_menu %}
                     <li>
@@ -45,7 +44,7 @@
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link active" href=" {% url 'add_post' %} ">Add Post</a>
+                <a class="nav-link" href=" {% url 'add_post' %} ">Add Post</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href=" {% url 'add_category' %} ">Add Category</a>
@@ -74,5 +73,7 @@
     <footer class="pt-5 my-5 text-muted border-top">
       Created by Wallace Silva &middot; &copy; 2022
     </footer>
+
+    <script src = {% static 'dist/js/bootstrap.bundle.min.js' %} ></script>
   </body>
 </html>
