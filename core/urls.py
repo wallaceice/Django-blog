@@ -23,11 +23,11 @@ urlpatterns = [
     path('members/', include('django.contrib.auth.urls')),
     path('member/', include('members.urls')),
     path('game/', include('game.urls')),
-    # homepage da nossa aplicação web. Dentro de views, irá usar a classe HomeView para abrir a página .html (index.html). Essa classe será implementada a seguir
-    path('chart/', views.HomeViewIris.as_view()),
-    # api onde serão armazenados nossos dados estruturados para criação dos gráficos. Será definido depois
-    path('api/', views.ListIris.as_view()),
-    #path('chart/', include('iris.urls')),
+    path('chart/', include('iris.urls')),
+    path('api/', views.ListIris.as_view(), name='chart_api'),
 
+    # homepage da nossa aplicação web. Dentro de views, irá usar a classe HomeView para abrir a página .html (index.html). Essa classe será implementada a seguir
+    #path('chart/', views.HomeViewIris.as_view()),
+    # api onde serão armazenados nossos dados estruturados para criação dos gráficos. Será definido depois
 
 ]
